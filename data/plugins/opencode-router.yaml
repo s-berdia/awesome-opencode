@@ -1,7 +1,7 @@
 name: opencode-router
 repo: https://github.com/s-berdia/Opencode_router
-tagline: Best model for each agent on OpenCode Go, Go Plus, or Free, with failover before you hit the 5-hour limit
-description: Scores every model in your OpenCode catalog for each agent (plan, build, general, explore) and for the internal helpers, from intelligence, speed, and the tokens that your plan allows in 5 hours. It records the usage of each model, moves an agent to its next model at 85% of the 5-hour limit or after a rate-limit error, and moves it back after the reset. Includes the /refresh-routing, /routing-status, /routing-plan, and /routing-update slash commands, a command-line tool, and an update checker. Install with `opencode plugin @s-berdia/opencode-router --global`.
+tagline: Best model for each agent on OpenCode Go, Go Plus, or Free, with a free-model fallback before you hit the usage limit
+description: Scores every model in your OpenCode catalog for each agent (plan, build, general, explore) and for the internal helpers, from intelligence, speed, and how fast the model uses your Go allowance. All Go models share one usage allowance. The router estimates its use, and at 85% (or after a usage-limit error) it moves the agents to a free model, then back when the use falls. After a rate-limit error of one model, it moves the agent to the next model in its list. Includes the /refresh-routing, /routing-status, /routing-plan, and /routing-update slash commands, a command-line tool, and an update checker. Install with `opencode plugin @s-berdia/opencode-router --global`.
 scope:
   - global
   - project
